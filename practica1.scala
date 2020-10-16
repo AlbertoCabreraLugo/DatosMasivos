@@ -1,9 +1,9 @@
-//1. Desarrollar un algoritmo en scala que calcule el radio de un circulo
-    //Ocupamos conocer el Perimetro(P) para poder sacar el radio, yo le asigne un numero 17.2788, puedes poner lo que quieras.
+// 1. Develop a scala algorithm that calculates the radius of a circle
+     // We need to know the Perimeter (P) to be able to get the radio, I assigned a number 17.2788, you can put whatever you want.
     val P = 17.2788
     val R = P/6.28
 
-//2. Desarrollar un algoritmo en scala que me diga si un numero es primo
+// 2. Develop an algorithm in scala that tells me if a number is prime
 
 def isPrime(num:Int): Boolean = {
     for(n <- Range(2, num)){
@@ -14,11 +14,11 @@ def isPrime(num:Int): Boolean = {
     return true
 }
 
-//El numero 10 es solo un ejemplo, se puede sustituir por cualquier numero y verificara que sea numero primo.
+//The number 10 is just an example, it can be substituted for any number and it will verify that it is a prime number.
 println(isPrime(10))
 
-//3. Dada la variable bird = "tweet", utiliza interpolacion de string para
-//   imprimir "Estoy ecribiendo un tweet"
+//3. Given the variable bird = "tweet", use string interpolation to
+//   print "Estoy ecribiendo un tweet"
 
 val x = "Estoy escribiendo un tweet"
 val bird = "tweet"
@@ -27,15 +27,15 @@ if(bird == "tweet"){
     println(s"$x")
 }
 
-//4. Dada la variable mensaje = "Hola Luke yo soy tu padre!" utiliza slice para extraer la
-//   secuencia "Luke"
+//4. Given the variable message = "Hello Luke, I am your father!" use slice to extract the
+//   sequence "Luke"
 val saludo = ("Hola Luke yo soy tu padre!")
 saludo slice (5,9)
 
-//5. Cual es la diferencia entre value y una variable en scala
-//Que la variable es mutable y en scala no es mutable te genera un error
+//5. What is the difference between value and a variable in scala
+//That the variable is mutable and in scala it is not mutable generates an error
 
-//6. Dada la tupla (2,4,5,1,2,3,3.1416,23) regresa el numero 3.1416 
+//6. Given the tuple (2,4,5,1,2,3,3.1416,23) return the number 3.1416 
 val tuplaPi = (2,4,5,1,2,3,3.1416,23)
 println(tuplaPi._7)
 
