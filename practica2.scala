@@ -1,8 +1,8 @@
-// 1. Crea una lista llamada "lista" con los elementos "rojo", "blanco", "negro"
+// 1. Create a list called "lista" with the elements "rojo", "blanco", "negro"
 import scala.collection.mutable.ListBuffer
 var lista = collection.mutable.ListBuffer("rojo", "blanco", "negro")
 
-// 2. Añadir 5 elementos mas a "lista" "verde" ,"amarillo", "azul", "naranja", "perla"
+// 2. Add 5 more elements to "lista" "verde" ,"amarillo", "azul", "naranja", "perla"
 lista +="verde"
 lista +="amarillo"
 lista +="azul"
@@ -11,22 +11,22 @@ lista +="perla"
 
 println(lista)
 
-// 3. Traer los elementos de "lista" "verde", "amarillo", "azul"
+// 3. Bring the elements of "lista" "verde", "amarillo", "azul"
 lista slice(3,6)
 
-// 4. Crea un arreglo de numero en rango del 1-1000 en pasos de 5 en 5
+// 4. Create an array of numbers in the range 1-1000 in steps of 5 by 5
 Array.range(0, 1000, 5)
 
-//5.- Cuales son los elementos unicos de la lista Lista(1,3,3,4,6,7,3,7) utilice conversion a conjuntos
+//5.- What are the unique elements of the list Lista(1,3,3,4,6,7,3,7) use conversion to sets
 val lista2 = Set(1,3,3,4,6,7,3,7)
 val lista2 = collection.mutable.Set(1,3,4,6,7)
 
-//6.-Crea una mapa mutable llamado nombres que contenga los siguiente
+//6.- Create a mutable map named nombres that contains the following
 //     "Jose", 20, "Luis", 24, "Ana", 23, "Susana", "27"
-val mapa = collection.mutable.Map(("Jose", 20), ("Luis", 24), ("Ana", 23), ("Susana", 27))
+val nombres = collection.mutable.Map(("Jose", 20), ("Luis", 24), ("Ana", 23), ("Susana", 27))
 
-//6 a.- Imprime todas la llaves del mapa
-mapa.keys
+//6 a.- Print all keys on the map
+nombres.keys
 
-//7 b.- Agrega el siguiente valor al mapa("Miguel", 23)
-mapa += ("Miguel" -> 23)
+//7 b.- Add the following value to the map ("Miguel", 23)
+nombres += ("Miguel" -> 23)
