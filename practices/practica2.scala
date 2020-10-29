@@ -29,4 +29,4 @@ val nombres = collection.mutable.Map(("Jose", 20), ("Luis", 24), ("Ana", 23), ("
 nombres.keys
 
 //7 b.- Add the following value to the map ("Miguel", 23)
-nombres += ("Miguel" -> 23)
+nombres += ("Miguel" -> 23) 
