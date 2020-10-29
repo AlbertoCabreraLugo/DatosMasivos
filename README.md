@@ -13,3 +13,5 @@
 * [Correlacion_Pearson](https://github.com/AlbertoCabreraLugo/DatosMasivos/blob/Unidad1/CabreraLugoAlberto-Investigation/Correlacion_Pearson_CabreraLugoAlberto17210533.md)
 * [Pair_Coding](https://github.com/AlbertoCabreraLugo/DatosMasivos/blob/Unidad1/CabreraLugoAlberto-Investigations/PairCoding_CabreraLugoAlberto17210533.md)
 ## [Research Arredondo Gomez Ramon Alejandro](https://github.com/AlbertoCabreraLugo/DatosMasivos/tree/Unidad1/ArredondoGomezRamonAlejandro-Investigations)
+* [Pearson_ Correlation](https://github.com/AlbertoCabreraLugo/DatosMasivos/blob/Unidad1/ArredondoGomezRamonAlejandro-Investigations/CorrelacionDePearson_ArredondoRamon_15210326.md)
+* [Pair_Coding](https://github.com/AlbertoCabreraLugo/DatosMasivos/blob/Unidad1/ArredondoGomezRamonAlejandro-Investigations/Pair_Coding_ArredondoRamon_15210326.md)
