@@ -28,4 +28,33 @@ val df2 = df.withColumn("HV Ratio",df("High")/df("Volume"))
 //8.- Which day had the highest peak in the “Close” column?
 df.select("Date", "Close").sort(desc("Close")).show(1)
 
+//9.- Escribe con tus propias palabras en un comentario de tu codigo. ¿Cuál es el
+//significado de la columna Cerrar “Close”? 
+//se refiere a lo que cerro las acciones del dia
 
+//10.- ¿Cuál es el máximo y mínimo de la columna “Volume”?
+df.select(max("Volume")).show()
+df.select(min("Volume")).show()
+
+//11.-Con Sintaxis Scala/Spark $ conteste los siguiente:
+//◦ Hint: Basicamente muy parecido a la session de dates, tendran que crear otro
+//dataframe para contestar algunos de los incisos
+//11a.-  ¿Cuántos días fue la columna “Close” inferior a $ 600?
+df.filter($"Close"<600).count()
+
+//11b.- ¿Qué porcentaje del tiempo fue la columna “High” mayor que $ 500?
+(df.filter($"High">500).count()*1.0/df.count())*100
+
+//11c.- ¿Cuál es la correlación de Pearson entre columna “High” y la columna “Volumen”?
+df.select(corr("High","Volume")).show()
+
+//11d.- ¿Cuál es el máximo de la columna “High” por año?
+//creas los datos
+val yeardf = df.withColumn("Year",year(df("Date")))
+val yearmaxs = yeardf.select($"Year",$"High").groupBy("Year").max()
+yearmaxs.select($"Year",$"max(High)").show()
+
+//11e.- ¿Cuál es el promedio de columna “Close” para cada mes del calendario?
+val monthdf = df.withColumn("Month",month(df("Date")))
+val monthavgs = monthdf.select($"Month",$"Close").groupBy("Month").mean()
+monthavgs.select($"Month",$"avg(Close)").show()
