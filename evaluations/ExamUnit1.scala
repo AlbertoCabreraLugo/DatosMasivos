@@ -58,3 +58,4 @@ yearmaxs.select($"Year",$"max(High)").show()
 val monthdf = df.withColumn("Month",month(df("Date")))
 val monthavgs = monthdf.select($"Month",$"Close").groupBy("Month").mean()
 monthavgs.select($"Month",$"avg(Close)").show()
+
