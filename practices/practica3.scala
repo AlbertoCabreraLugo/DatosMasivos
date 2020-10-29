@@ -73,7 +73,7 @@ def palindromo(palabra:String):Boolean ={
 val palabra = "OSO"//variable declaration
 val palabra2 = "ANNA"//variable declaration
 val palabra3 = "JUAN"//variable declaration
-
+ 
 println(palindromo(palabra))//impression of values
 println(palindromo(palabra2))//impression of values
 println(palindromo(palabra3))//impression of values
