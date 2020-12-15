@@ -1,9 +1,10 @@
 # Practice 8 - One vs Rest
 
 Import the libreries
+```scala
 import org.apache.spark.ml.classification.{LogisticRegression, OneVsRest}
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
-
+```
 Upload data file.
 ```scala
 var inputData = spark.read.format("libsvm").load("/opt/spark/data/mllib/sample_multiclass_classification_data.txt")
