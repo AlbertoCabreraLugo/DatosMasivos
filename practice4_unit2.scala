@@ -1,4 +1,4 @@
-# Practice 4 - Decision Tree Classifie
+# Practice 4 - Decision Tree Classifier
 
 ```Scala
 import org.apache.spark.ml.Pipeline
