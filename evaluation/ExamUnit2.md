@@ -1,28 +1,79 @@
 # Assessment practice - Unit 2
 
-// We add the necessary libraries to work with the Multilayer Perceptron algorithm.import org.apache.spark.ml.classification.MultilayerPerceptronClassifier
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+<div align="center">
 
-// 1.- From the data set Iris.cvs, elaborate the necessary data cleaning by means of a scala spark script, we import the necessary libraries for cleaning.import org.apache.spark.ml.feature.VectorAssembler
+**Instituto Tecnológico de Tijuana**
+
+Departamento de Ciencias y Computación
+
+Ingeniería en Sistemas Computacionales
+ 
+ [![](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)
+
+**Title:**
+Random Forest Classifier
+
+**Subject:**
+BDD-1704 SC9A Datos Masivos
+
+**Unit:**
+ II
+
+**Professor:**
+JOSE CHRISTIAN ROMERO HERNANDEZ
+
+
+ARREDONDO GOMEZ RAMON ALEJANDRO     15210326
+
+CABRERA LUGO ALBERTO                17210533 
+
+**Group:**
+SC9A
+
+**Date:**
+Tijuana, Baja California, November 23, 2020. 
+</div>
+
+
+We add the necessary libraries to work with the Multilayer Perceptron algorithm.import org.apache.spark.ml.classification.MultilayerPerceptronClassifier
+```scala
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+```
+### 1.- From the data set Iris.cvs, elaborate the necessary data cleaning by means of a scala spark script, we import the necessary libraries for cleaning.import 
+org.apache.spark.ml.feature.VectorAssembler
+```scala
 import org.apache.spark.ml.feature.{VectorAssembler, StringIndexer}
 import org.apache.spark.ml.linalg.Vectors
+```
+The data from the iris.csv dataframe is loaded into the variable "data"
+```scala
+val data  = spark.read.option("header","true").option("inferSchema", "true").format("csv").load("iris.csv")
+```
 
-// The data from the iris.csv dataframe is loaded into the variable "data"val data  = spark.read.option("header","true").option("inferSchema", "true").format("csv").load("iris.csv")
-
-// 2.- Names of the columns
+### 2.- Names of the columns
+```scala
 data.columns
+```
 
-// 3.- Vemos el esquema para compro// 3.- We see the scheme to verify that all the values are classified correctly in the datasetbar que todos los valores están clasificados correctamente en el dataset
+### 3.- We see the scheme to verify that all the values are classified correctly in the datasetbar que todos los valores están clasificados correctamente en el dataset
+```scala
 data.printSchema()
+```
 
-//4.- print the first 5 columns
+### 4.- print the first 5 columns
+```scala
 data.show(5)
+```
 
-// 5.- Usa el método descri// 5.- Use the describe () method to learn more about the data in the DataFrame.be () para aprender mas sobre los datos del  DataFrame.
+### 5.- Use the describe () method to learn more about the data in the DataFrame.be () para aprender mas sobre los datos del  DataFrame.
+```scala
 data.describe().show()
-
-// The null fields are removed
+```
+The null fields are removed
+```scala
 val dataClean = data.na.drop()
-
-// Se declara u// A vector is declared that transforms the data to the variable "features"n vector que se transforma los datos a la variable "features"
+```
+A vector is declared that transforms the data to the variable "features"n vector que se transforma los datos a la variable "features"
+```scala
 val vectorFeatures = (new VectorAssembler().setInputCols(Array("sepal_length","sepal_width", "petal_length","petal_width")).setOutputCol("features"))
+```
