@@ -10,7 +10,7 @@ val training = spark.read.format("libsvm").load("C:/Users/DELL/Desktop/LSVMExamp
 
 val lsvc = new LinearSVC().setMaxIter(10).setRegParam(0.1)
 ```
-Fit the model
+Fit the model.
 ```scala
 val lsvcModel = lsvc.fit(training)
 ```
