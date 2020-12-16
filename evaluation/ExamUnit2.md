@@ -77,6 +77,7 @@ A vector is declared that transforms the data to the variable "features"n vector
 ```scala
 val vectorFeatures = (new VectorAssembler().setInputCols(Array("sepal_length","sepal_width", "petal_length","petal_width")).setOutputCol("features"))
 ```
+
 ### 6.- We transform the features using the DataFrame
 ```scala
 val features = vectorFeatures.transform(dataClean)
@@ -115,6 +116,7 @@ The Multilayer algorithm trainer is configured with its respective parameters
 ```scala
 val trainer = new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setSeed(1234L).setMaxIter(100)
 ```
+
 The model is trained with the training data
 ```scala
 val model = trainer.fit(train)
@@ -139,6 +141,7 @@ The model precision estimate is run
 ```scala
 val evaluator = new MulticlassClassificationEvaluator().setLabelCol("label").setPredictionCol("prediction").setMetricName("accuracy")
 ```
+
 ```scala
 val accuracy = evaluator.evaluate(predictionAndLabels)
 ```
