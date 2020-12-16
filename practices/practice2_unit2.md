@@ -109,7 +109,7 @@ Print the Confusion matrix
 println("Confusion matrix:")
 println(metrics.confusionMatrix)
 ```
-Show the accuracy
+Show the accuracy.
 ```scala
 metrics.accuracy
 ```
