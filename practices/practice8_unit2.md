@@ -21,7 +21,7 @@ Create an instance of the One Vs Rest classifier.
 ```scala
 val ovr = new OneVsRest().setClassifier(classifier)
 ```
-Train the multiclass model
+Train the multiclass model.
 ```scala
 val ovrModel = ovr.fit(train)
 ```
