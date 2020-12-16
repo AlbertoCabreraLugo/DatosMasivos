@@ -47,7 +47,7 @@ object MultilayerPerceptronClassifierExample {
       .setSeed(1234L)
       .setMaxIter(100)
 
-    // The model is trained
+    // The model is trained.
     val model = trainer.fit(train)
 
     // The precision of the test data is calculated
