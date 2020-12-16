@@ -23,7 +23,7 @@ Select the sample rows to display
 val predictions = model.transform(testData)
 predictions.show()
 ```
-Select (prediction, true label) and calculate test errors
+Select (prediction, true label) and calculate test errors.
 ```Scala
 val evaluator = new MulticlassClassificationEvaluator().setLabelCol("label").setPredictionCol("prediction").setMetricName("accuracy")
 
