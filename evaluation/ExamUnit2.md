@@ -77,3 +77,73 @@ A vector is declared that transforms the data to the variable "features"n vector
 ```scala
 val vectorFeatures = (new VectorAssembler().setInputCols(Array("sepal_length","sepal_width", "petal_length","petal_width")).setOutputCol("features"))
 ```
+### 6.- We transform the features using the DataFrame
+```scala
+val features = vectorFeatures.transform(dataClean)
+```
+
+A "StringIndexer" is declared that transforms the data in "species" into numeric data
+```scala
+val speciesIndexer = new StringIndexer().setInputCol("species").setOutputCol("label")
+```
+We adjust the indexed species with the vector features
+```scala
+val dataIndexed = speciesIndexer.fit(features).transform(features)
+```
+
+With the variable "splits" we make a random cut
+```scala
+val splits = dataIndexed.randomSplit(Array(0.6, 0.4), seed = 1234L)
+```
+
+The variable "train" is declared which will have 60% of the data
+```scala
+val train = splits(0)
+```
+
+The variable "test" is declared which will have 40% of the data
+```scala
+val test = splits(1)
+```
+
+### 7.- Layer settings are established for the artificial neural network model
+``scala
+val layers = Array[Int](4, 2, 2, 3)
+```
+
+The Multilayer algorithm trainer is configured with its respective parameters
+```scala
+val trainer = new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setSeed(1234L).setMaxIter(100)
+```
+The model is trained with the training data
+```scala
+val model = trainer.fit(train)
+```
+
+The model is tested and already trained
+```scala
+val result = model.transform(test)
+```
+
+The prediction and the label that will be saved in the variable are selected
+```scala
+val predictionAndLabels = result.select("prediction", "label")
+```
+
+Some data is shown
+```scala
+predictionAndLabels.show()
+```
+
+The model precision estimate is run
+```scala
+val evaluator = new MulticlassClassificationEvaluator().setLabelCol("label").setPredictionCol("prediction").setMetricName("accuracy")
+```
+```scala
+val accuracy = evaluator.evaluate(predictionAndLabels)
+```
+
+### 8.- Error model is printed
+```scala
+println(s"Test Error = ${(1.0 - accuracy)}")
+```
