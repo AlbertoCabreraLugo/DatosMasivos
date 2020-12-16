@@ -57,4 +57,3 @@ Show the values of residuals, the RMSE, the MSE, and also the R^2
 ```scala
 trainingSummary.residuals.show()
 ```
-
