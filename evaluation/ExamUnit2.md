@@ -108,7 +108,8 @@ val test = splits(1)
 ```
 
 ### 7.- Layer settings are established for the artificial neural network model
-``scala
+
+```scala
 val layers = Array[Int](4, 2, 2, 3)
 ```
 
