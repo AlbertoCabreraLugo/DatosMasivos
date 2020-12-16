@@ -69,7 +69,7 @@ object ChiSquareTestExample {
   }
 }
 ```
-### Summarizer. Usage and metrics
+### Summarizer. Usage and metrics.
 ```scala
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.ml.stat.Summarizer
