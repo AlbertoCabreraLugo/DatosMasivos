@@ -1,6 +1,5 @@
 # Assessment practice - Unit 2
 
-<div align="center">
 
 **Instituto Tecnológico de Tijuana**
 
