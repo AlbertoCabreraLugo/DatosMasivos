@@ -61,7 +61,7 @@ Select example rows to display.
 predictions.select("predictedLabel", "label", "features").show(20)
 ```
 
-Select (prediction, true label) and compute test error.
+Select (prediction, true label) and compute test error
 ``` scala
 val evaluator = new MulticlassClassificationEvaluator().setLabelCol("indexedLabel").setPredictionCol("prediction").setMetricName("accuracy")
 val accuracy = evaluator.evaluate(predictions)
